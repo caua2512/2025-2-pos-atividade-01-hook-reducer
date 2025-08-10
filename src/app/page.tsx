@@ -1,18 +1,23 @@
 import Image from "next/image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   return (
     <div>
-      <header>
-        <h1>Infoweb - Atividade 1 do 2o bimestre</h1>
-      </header>
+      <Header />
       <main>
-        <h2>Atividade 1 do 2o bimestre com hook reducer e shadcnui</h2>
+        <Card>
+          <CardHeader>
+            <CardTitle>Bem-vindo ao Gerenciador de Tarefas</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>Aplicativo para gerenciar tarefas usando React, hook reducer e Shadcn UI.</p>
+          </CardContent>
+        </Card>
       </main>
-      <footer>
-        <p>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</p>
-        <p><a href="https://fsf.org/">Copyright (C) 2007 Free Software Foundation, Inc.</a></p>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,10 +1,7 @@
 export default function Footer() {
   return (
-    <footer>
-      <p>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</p>
-      <p>
-        <a href="https://fsf.org/">Copyright (C) 2007 Free Software Foundation, Inc.</a>
-      </p>
+    <footer className="bg-gray-800 text-white p-4 text-center h-20 flex items-center justify-center">
+      <p>Feito por: Cauã Henrique Monteiro Dias</p>
     </footer>
   );
 }

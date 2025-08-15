@@ -7,6 +7,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function EditarTarefa() {
   const { tarefas, dispatch } = useTarefas();
@@ -39,38 +41,46 @@ export default function EditarTarefa() {
   }
 
   if (!tarefa) return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Tarefa não encontrada</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Button onClick={() => router.push("/tarefas")}>Voltar</Button>
-      </CardContent>
-    </Card>
+    <div>
+      <Header />
+      <Card>
+        <CardHeader>
+          <CardTitle>Tarefa não encontrada</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Button onClick={() => router.push("/tarefas")}>Voltar</Button>
+        </CardContent>
+      </Card>
+    </div>
   );
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Editar Tarefa</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <Input
-            value={titulo}
-            onChange={e => setTitulo(e.target.value)}
-            placeholder="Título"
-            required
-          />
-          <Textarea
-            value={descricao}
-            onChange={e => setDescricao(e.target.value)}
-            placeholder="Descrição"
-            required
-          />
-          <Button type="submit">Salvar</Button>
-        </form>
-      </CardContent>
-    </Card>
+    <div>
+      <Header />
+      <Card className=" flex flex-col w-150 h-100 justify-center mx-auto mt-35 mb-35">
+        <CardHeader>
+          <CardTitle className="text-2xl">Editar Tarefa</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <Input
+              value={titulo}
+              onChange={e => setTitulo(e.target.value)}
+              placeholder="Título"
+              required
+            />
+            <Textarea
+              value={descricao}
+              onChange={e => setDescricao(e.target.value)}
+              placeholder="Descrição"
+              required
+              className="h-36"
+            />
+            <Button type="submit">Salvar</Button>
+          </form>
+        </CardContent>
+      </Card>
+      <Footer />
+    </div>
   );
 }

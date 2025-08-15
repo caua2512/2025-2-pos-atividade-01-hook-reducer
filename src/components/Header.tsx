@@ -1,7 +1,7 @@
 export default function Header() {
   return (
-    <header>
-      <h1>Infoweb - Atividade 1 do 2o bimestre</h1>
+    <header className="bg-gray-800 text-white p-4 flex justify-center items-center h-20">
+      <h1 className="font-bold text-2xl">Serviço de Gerenciamento de Tarefas</h1>
     </header>
   );
 }
